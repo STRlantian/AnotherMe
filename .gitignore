@@ -12,3 +12,5 @@
 /Temp
 /UserSettings
 *.meta
+/Assets/GameSettings.txt
+/Assets/GameSave.txt
