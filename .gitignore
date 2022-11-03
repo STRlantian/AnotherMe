@@ -3,3 +3,12 @@
 ################################################################################
 
 /Assets/.vs
+/.vs/AnotherMe
+/Library
+/Logs
+/obj/Debug
+/Packages
+/ProjectSettings
+/Temp
+/UserSettings
+*.meta
