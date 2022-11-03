@@ -1,5 +1,5 @@
 #Do NOT edit unless you know what are these
 Music_Volumn:56
 Effect_Volumn:74
-Shaking:1
+Shaking:0
 Bind:0
