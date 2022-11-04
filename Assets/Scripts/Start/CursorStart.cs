@@ -1,5 +1,6 @@
 using STRlantian.Factory;
 using STRlantian.KeyController;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -34,10 +35,13 @@ public class CursorStart : MonoBehaviour
         {
             ASettingFactory.LoadSettings();
         }
-        int[] settings = ASettingFactory.GetSettings();
-        AKey.UpdateKey(settings[ASettingFactory.BIND]);
-        SliderAudio.musVol = settings[ASettingFactory.MUSIC];
-        SliderAudio.effVol = settings[ASettingFactory.EFFECT];
+        byte[] settings = ASettingFactory.GetSettings();
+        AKey.UpdateKey((byte) settings.GetValue(ASettingFactory.BIND));
+        Debug.Log("Setting List" + settings[0]
+            + "\n" + settings[1]
+            + "\n" + settings[2]
+            + "\n" + settings[3]
+            + "\n===============\n");
     }
     private void CursorCheck()
     {

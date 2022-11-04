@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Unity.Collections.LowLevel.Unsafe;
 using UnityEngine;
 
 namespace STRlantian.Factory
@@ -41,7 +42,7 @@ namespace STRlantian.Factory
     }
     public abstract class ASettingFactory
     {
-        private static int[] SETTINGLIST = new int[4];
+        private static byte[] SETTINGLIST = new byte[4];
 
         public const int MUSIC = 0, EFFECT = 1, SHAKE = 2, BIND = 3;
 
@@ -68,12 +69,12 @@ namespace STRlantian.Factory
                     bool[] tmp = new bool[4];
                     for(int i = 1; i <= 4; i++)
                     {
-                        tmp.SetValue((content.GetValue(i).ToString()).Contains(BASECONTENT.GetValue(i).ToString()), i - 1);
+                        tmp.SetValue(content.GetValue(i).ToString().Contains(BASECONTENT.GetValue(i).ToString()), i - 1);
                     }
                     return tmp[0] && tmp[1] && tmp[2] && tmp[3];
                 }catch(IndexOutOfRangeException exc)
                 {
-                    Console.Write(exc);
+                    Debug.Log(exc);
                     return false;
                 }
             }
@@ -82,11 +83,11 @@ namespace STRlantian.Factory
                 return false;
             }
         }
-        public static int[] GetSettings()
+        public static byte[] GetSettings()
         {
             if(CheckSettings())
             {
-                return (int[]) SETTINGLIST.Clone();
+                return (byte[]) SETTINGLIST.Clone();
             }
             else
             {
@@ -94,11 +95,11 @@ namespace STRlantian.Factory
                 return GetSettings();
             }
         }
-        public static int GetSettings(int which)
+        public static byte GetSettings(int which)
         {
             if (CheckSettings())
             {
-                return (int) SETTINGLIST.GetValue(which);
+                return (byte) SETTINGLIST.GetValue(which);
             }
             else
             {
@@ -107,7 +108,7 @@ namespace STRlantian.Factory
             }
         }
 
-        public static void UpdateSettings(int[] v)
+        public static void UpdateSettings(byte[] v)
         {
             if (!CheckSettings())
             {
@@ -120,6 +121,7 @@ namespace STRlantian.Factory
                 for(int i = 1; i <= BASECONTENT.Length - 1; i++)
                 {
                     file[i] += v[i - 1].ToString();
+                    SETTINGLIST.SetValue(v[i - 1], i - 1);
                 }
                 File.WriteAllLines(PATH, file);
                 LoadSettings();
@@ -138,7 +140,7 @@ namespace STRlantian.Factory
             File.Create(PATH).Close();
             File.WriteAllLines(PATH, dft);
         }
-
+     
         public static void LoadSettings()
         {
             if (!CheckSettings())
@@ -151,12 +153,14 @@ namespace STRlantian.Factory
                 try
                 {
                     String sub = list[i].Substring(list[i].IndexOf(':') + 1);
-                    int v = Int32.Parse(sub);
+                    Debug.Log("Parametre sub: " + sub);
+                    byte v = Byte.Parse(sub);
+                    Debug.Log("Parametre v: " + v);
                     SETTINGLIST.SetValue(v, i - 1);
                 }catch (IndexOutOfRangeException exc)
                 {
-                    Console.WriteLine(exc);
-                    Console.WriteLine("Settings went wrong, trying to fix");
+                    Debug.Log(exc);
+                    Debug.Log("Settings went wrong, trying to fix");
                     CreateSettings();
                 }
             }
@@ -189,7 +193,7 @@ namespace STRlantian.Factory
             }
             catch (Exception exc)
             {
-                Console.WriteLine(exc);
+                Debug.Log(exc);
                 throw new Exception("Cursor is not at the right position");
             }
 
@@ -232,28 +236,6 @@ namespace STRlantian.Factory
             {
                 throw new Exception("Congratulations, you made a bug");
             }
-        }
-    }
-    public abstract class ASliderFactory
-    {
-        public static int ApplyKeySlider(float max, float min, Rigidbody2D slider, int which)
-        {
-            KeyCode add = which == ACursorFactory.CHOICE_X ? AKey.right : AKey.up;
-            KeyCode minus = which == ACursorFactory.CHOICE_X ? AKey.left : AKey.down;
-            if (Input.GetKey(add)
-             || Input.GetKey(minus))
-            {
-                int dire = Input.GetKey(minus) ? -1 : 1;
-                float curX = slider.position.x;
-                if (min <= curX
-                && curX <= max)
-                {
-                    float tmp = (dire * (max - min) / 100);
-                    float nowX = (curX + tmp > max) ? max : ((curX + tmp < min) ? min : curX + tmp);
-                    slider.position = new Vector2(nowX, slider.position.y);
-                }
-            }
-            return (int)(100 * ((slider.position.x - min) / (max - min)));
         }
     }
 }
