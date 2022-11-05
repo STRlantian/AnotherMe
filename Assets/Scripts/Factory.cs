@@ -8,49 +8,59 @@ using UnityEngine;
 
 namespace STRlantian.Factory
 {
-    public abstract class ASaveFactory
+    //各个工厂
+    public abstract class AShakerFactory
     {
-        private static String DIR = "C:\\zzzzzz\\AnotherMe\\" + Environment.UserName;
-        private static String FILENAME = "save.txt";
-        private static String PATH = DIR + "\\" + FILENAME;
-        private static List<int> SAVELIST = new();
-
-        private static String[] MODELCONTENT =
+        /*
+        private static List<Animator> shakers = new List<Animator>();
+        public static void RegisterShakers(List<Animator> anims)
         {
-            "#Do NOT edit unless you know what are these",
-            "Scene:",
-            "Item:",
-            "RhyGame:",
-        };
-
-        public static void CreateSave()
+            shakers.AddRange(anims);
+        }
+        public static void RegisterShakers(Animator anim)
         {
-            Directory.CreateDirectory(DIR);
-            File.Create(PATH);
+            shakers.Add(anim);
+        }
+        */
 
+        public static void EnableShakers(Animator[] shakers)
+        {
+            if (ASettingFactory.GetSettings(ASettingFactory.SHAKE) == 1)
+            {
+                foreach (Animator i in shakers)
+                {
+                    i.SetBool("isShakeEnabled", true);
+                }
+            }
+            else
+            {
+                foreach (Animator i in shakers)
+                {
+                    i.SetBool("isShakeEnabled", false);
+                }
+            }
         }
 
-        public static void WriteInSave()
-        {
-
-        }
-
-        private static void WriteInFile()
-        {
-
+        public static void EnableShakers(Animator[] shakers, bool v)
+        { 
+            foreach (Animator i in shakers)
+            {
+                i.SetBool("isShakeEnabled", v);
+            }
         }
     }
+
     public abstract class ASettingFactory
     {
         private static byte[] SETTINGLIST = new byte[4];
 
         public const int MUSIC = 0, EFFECT = 1, SHAKE = 2, BIND = 3;
 
-        private static String DIR = Application.dataPath;
-        private static String FILENAME = "GameSettings.txt";
-        private static String PATH = DIR + "\\" + FILENAME;
+        private static readonly String DIR = Application.dataPath;
+        private const String FILENAME = "GameSettings.txt";
+        private static readonly String PATH = DIR + "\\" + FILENAME;
 
-        private static String[] BASECONTENT = 
+        private static readonly String[] BASECONTENT = 
             {
                 "#Do NOT edit unless you know what are these",
                 "Music_Volumn:",   //Music Vol     de 100-100
@@ -135,7 +145,7 @@ namespace STRlantian.Factory
             dft[2] = dft[2] + "100";
             dft[3] = dft[3] + "0";
             dft[4] = dft[4] + "0";
-
+    
             Directory.CreateDirectory(DIR);
             File.Create(PATH).Close();
             File.WriteAllLines(PATH, dft);

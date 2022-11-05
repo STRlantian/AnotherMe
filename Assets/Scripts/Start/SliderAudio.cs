@@ -4,30 +4,33 @@ using STRlantian.KeyController;
 
 public class SliderAudio : MonoBehaviour
 {
+    //在设置界面的两个滑块
     public Rigidbody2D bodyMusic;
     public Rigidbody2D bodyEffect;
     public Rigidbody2D cursor;
     public static byte musVol, effVol;
-
     private const float MAXV = 13.5f;
     private const float MINV = -1f;
 
     void Start()
     {
-        byte mus = ASettingFactory.GetSettings(ASettingFactory.MUSIC);
-        byte eff = ASettingFactory.GetSettings(ASettingFactory.EFFECT);
-        float leng = MAXV - MINV;
-        float musLeng = (mus / 100) * leng + MINV;
-        float effLeng = (eff / 100) * leng + MINV; 
-        bodyMusic.position = new Vector2(musLeng, bodyMusic.position.y);
-        bodyEffect.position = new Vector2(effLeng, bodyEffect.position.y);
-        musVol = mus;
-        effVol = eff;
+        InitSlider();
     }
 
     void Update()
     {
         SliderCheck();
+    }
+
+    public void InitSlider()
+    {
+        byte mus = ASettingFactory.GetSettings(ASettingFactory.MUSIC);
+        byte eff = ASettingFactory.GetSettings(ASettingFactory.EFFECT);
+        float leng = MAXV - MINV;
+        bodyMusic.position = new Vector2(mus / 100f * leng + MINV, bodyMusic.position.y);
+        bodyEffect.position = new Vector2(eff / 100f * leng + MINV, bodyEffect.position.y);
+        musVol = mus;
+        effVol = eff;
     }
 
     private void SliderCheck()

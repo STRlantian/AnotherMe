@@ -347,8 +347,6 @@ MonoBehaviour:
   bodyMusic: {fileID: 1117867266}
   bodyEffect: {fileID: 1437892405}
   cursor: {fileID: 1513798819}
-  musVol: 0
-  effVol: 0
 --- !u!50 &1117867266
 Rigidbody2D:
   serializedVersion: 4
@@ -704,6 +702,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   body: {fileID: 1513798819}
+  optShaker:
+  - {fileID: 1723601403}
+  - {fileID: 1513798815}
+  - {fileID: 143530317}
+  - {fileID: 1689003647}
+  - {fileID: 1437892408}
+  - {fileID: 1117867269}
 --- !u!50 &1513798819
 Rigidbody2D:
   serializedVersion: 4

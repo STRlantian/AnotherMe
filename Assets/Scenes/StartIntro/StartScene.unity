@@ -149,7 +149,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7255129}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: d47ea3d101c611f42b9708458aacca15, type: 2}
   m_CullingMode: 0
@@ -642,12 +642,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   body: {fileID: 1209805673}
-  anim: {fileID: 1209805668}
-  buttonAnim:
-  - {fileID: 441659817}
+  startShaker:
   - {fileID: 909153645}
-  - {fileID: 1592228367}
+  - {fileID: 1209805668}
   - {fileID: 1423325906}
+  - {fileID: 1592228367}
+  - {fileID: 441659817}
 --- !u!50 &1209805673
 Rigidbody2D:
   serializedVersion: 4

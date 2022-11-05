@@ -3,16 +3,21 @@ using STRlantian.Factory;
 using STRlantian.KeyController;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
+using System;
 
 public class CursorOpt : MonoBehaviour
 {
+    //在设置界面的指针
     public Rigidbody2D body;
-    private static float[] yList = {11f, 6f, 1f, -4f, -9f};
+    public Animator[] optShaker;
+    private static readonly float[] yList = {11f, 6f, 1f, -4f, -9f};
     private static byte[] tempList = new byte[4];
 
-    private void Start()
+    void Start()
     {
         tempList = (byte[]) ASettingFactory.GetSettings().Clone();
+        AShakerFactory.EnableShakers(optShaker);
     }
     void Update()
     {
@@ -32,7 +37,7 @@ public class CursorOpt : MonoBehaviour
             body.position = new Vector2(-13f, body.position.y);
         }
     }
-    private static void CursorClick(Rigidbody2D body)
+    private void CursorClick(Rigidbody2D body)
     {
         if (Input.GetKeyDown(AKey.a)
         || Input.GetKeyDown(AKey.b))
@@ -40,7 +45,9 @@ public class CursorOpt : MonoBehaviour
             float curY = body.position.y;
             if (curY == yList[ASettingFactory.SHAKE])
             {
-                tempList.SetValue((byte) (tempList[ASettingFactory.SHAKE] == 0 ? 1 : 0), ASettingFactory.SHAKE);
+                byte shake = (byte)(tempList[ASettingFactory.SHAKE] == 0 ? 1 : 0);
+                tempList.SetValue(shake, ASettingFactory.SHAKE);
+                AShakerFactory.EnableShakers(optShaker, shake == 1 ? true : false);
             }
             else if (curY == yList[ASettingFactory.BIND])
             {

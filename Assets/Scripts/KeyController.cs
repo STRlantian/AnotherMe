@@ -2,6 +2,7 @@
 
 namespace STRlantian.KeyController
 {
+    //自主键位设置
     public abstract class AKey
     { 
         public static KeyCode a, b, up, down, left, right;
