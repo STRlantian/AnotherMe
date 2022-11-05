@@ -4,13 +4,12 @@
 
 /Assets/.vs
 /.vs/AnotherMe
-/Library
 /Logs
 /obj/Debug
 /Packages
-/ProjectSettings
 /Temp
 /UserSettings
 *.meta
 /Assets/GameSettings.txt
 /Assets/GameSave.txt
+/Library

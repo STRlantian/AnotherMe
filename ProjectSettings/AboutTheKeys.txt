@@ -1,0 +1,2 @@
+I didn't use the Input.GetAxis() method 
+but Input.GetKey() directly to indentify keys
