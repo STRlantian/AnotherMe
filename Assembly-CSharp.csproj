@@ -56,11 +56,15 @@
     <Analyzer Include="D:\MyPrograms\VisualStudioIDE\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Start\CursorOpt.cs" />
-    <Compile Include="Assets\Scripts\Start\SliderAudio.cs" />
-    <Compile Include="Assets\Scripts\KeyController.cs" />
-    <Compile Include="Assets\Scripts\Factory.cs" />
-    <Compile Include="Assets\Scripts\Start\CursorStart.cs" />
+    <Compile Include="Assets\STRlantian\Scripts\Start\CursorOpt.cs" />
+    <Compile Include="Assets\STRlantian\Scripts\Start\SliderAudio.cs" />
+    <Compile Include="Assets\STRlantian\Scripts\KeyController.cs" />
+    <Compile Include="Assets\STRlantian\Scripts\Factory.cs" />
+    <Compile Include="Assets\STRlantian\Scripts\Start\CursorStart.cs" />
+    <Compile Include="Assets\STRlantian\Scripts\VisualEffect.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\GameSettings.txt" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

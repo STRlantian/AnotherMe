@@ -1,23 +1,32 @@
 using UnityEngine;
 using STRlantian.Factory;
 using STRlantian.KeyController;
-using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using STRlantian.VisualEffect;
 using Unity.VisualScripting;
-using System;
 
 public class CursorOpt : MonoBehaviour
 {
     //在设置界面的指针
     public Rigidbody2D body;
+    public Animator check;
     public Animator[] optShaker;
+    public GameObject[] objects;
     private static readonly float[] yList = {11f, 6f, 1f, -4f, -9f};
     private static byte[] tempList = new byte[4];
 
     void Start()
     {
-        tempList = (byte[]) ASettingFactory.GetSettings().Clone();
+        tempList = (byte[])ASettingFactory.GetSettings().Clone();
         AShakerFactory.EnableShakers(optShaker);
+        if ((byte) tempList.GetValue(ASettingFactory.SHAKE) == 1)
+        {
+            check.SetBool("checkSetting", true);
+        }
+        else
+        {
+            check.SetBool("checkSetting", false);
+        }
     }
     void Update()
     {
@@ -47,7 +56,8 @@ public class CursorOpt : MonoBehaviour
             {
                 byte shake = (byte)(tempList[ASettingFactory.SHAKE] == 0 ? 1 : 0);
                 tempList.SetValue(shake, ASettingFactory.SHAKE);
-                AShakerFactory.EnableShakers(optShaker, shake == 1 ? true : false);
+                AShakerFactory.EnableShakers(optShaker, shake == 1);
+                check.SetBool("keyDown", !check.GetBool("keyDown"));
             }
             else if (curY == yList[ASettingFactory.BIND])
             {

@@ -206,9 +206,9 @@ namespace STRlantian.Factory
                 Debug.Log(exc);
                 throw new Exception("Cursor is not at the right position");
             }
-
-            KeyCode add = which == CHOICE_X ? AKey.right : AKey.up;
-            KeyCode minus = which == CHOICE_X ? AKey.left : AKey.down;
+            //***
+            KeyCode add = which == CHOICE_X ? AKey.left : AKey.up;
+            KeyCode minus = which == CHOICE_X ? AKey.right : AKey.down;
 
             if (Input.GetKeyDown(minus))
             {
@@ -231,7 +231,7 @@ namespace STRlantian.Factory
                 }
                 else
                 {
-                    index = 3;
+                    index = list.Length - 1;
                 }
             }
             if (which == CHOICE_X)
