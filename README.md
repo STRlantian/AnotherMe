@@ -1,35 +1,39 @@
-# AnotherMe
+# AnotherMe  
 
-A 2D RPG game with Unity
+A 2D RPG game with Unity  
 
-This is the first time I develop a game with Unity
+This is the first time I develop a game with Unity  
 
-And actually im a little young to write codes so pls give feedback if there are problems
+And actually im a little young to write codes so pls give feedback if there are problems  
 
--Warning-
+-Warning-  
 
-This game DOES NOT contain any scary, disturbing elements
+This game DOES NOT contain any scary, disturbing elements  
 
-which means there are NO jumpscares, suddenly-appear-on-the-screen eyes and stuff like them
+which means there are NO jumpscares, suddenly-appear-on-the-screen eyes and stuff like them  
 
-This game should be provided for FREE on itch.io (maybe on steam later)
+This game should be provided for FREE on itch.io (maybe on steam later)  
 
-# Credits
+# Credits  
 
-STRlantian -> Art, Programme, Story
+STRlantian -> Art, Programme, Story  
 
-https://space.bilibili.com/356775820       Bilibili Channel
+[Bilibili Channel](https://space.bilibili.com/356775820) | [Github Channel](https://github.com/Strlantian/)  
 
-RhythmLove -> Art
+RhythmLove -> Art  
 
-https://space.bilibili.com/506815477       Bilibili Channel
+[Bilibili Channel](https://space.bilibili.com/506815477) | [Github Channel](https://github.com/#/)  
 
-JoeMichaelQiao -> Supporter
+JoeMichaelQiao -> Spectator/Supporter  
 
-# Support
+[Bilibili Channel](https://space.bilibili.com/583324741) | [Github Channel](https://github.com/JoeMichaelQiao/)  
 
-Um...
+# Support  
 
-If you want to donate me I'd appreciate
+Um...  
 
-Please just use my afadian(On the mainpage of my Github) thx
+If you want to donate me I'd appreciate  
+
+Please just use my [afadian](https://afdian.net/a/STRlantian)(On the mainpage of my Github) thx  
+
+P.S. Afdian only supports Alipay and wechat payments, so forget about using your PayPal. ¯\\(ツ)/¯  
