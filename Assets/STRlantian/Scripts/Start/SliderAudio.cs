@@ -9,8 +9,8 @@ public class SliderAudio : MonoBehaviour
     public Rigidbody2D bodyEffect;
     public Rigidbody2D cursor;
     public static byte musVol, effVol;
-    private const float MAXV = 13.5f;
-    private const float MINV = -1f;
+    private const float _MAXV = 13.5f;
+    private const float _MINV = -1f;
 
     void Start()
     {
@@ -26,9 +26,9 @@ public class SliderAudio : MonoBehaviour
     {
         byte mus = ASettingFactory.GetSettings(ASettingFactory.MUSIC);
         byte eff = ASettingFactory.GetSettings(ASettingFactory.EFFECT);
-        float leng = MAXV - MINV;
-        bodyMusic.position = new Vector2(mus / 100f * leng + MINV, bodyMusic.position.y);
-        bodyEffect.position = new Vector2(eff / 100f * leng + MINV, bodyEffect.position.y);
+        float leng = _MAXV - _MINV;
+        bodyMusic.position = new Vector2(mus / 100f * leng + _MINV, bodyMusic.position.y);
+        bodyEffect.position = new Vector2(eff / 100f * leng + _MINV, bodyEffect.position.y);
         musVol = mus;
         effVol = eff;
     }
@@ -38,11 +38,11 @@ public class SliderAudio : MonoBehaviour
         float curY = cursor.position.y;
         if (curY == 11f)
         {
-            musVol = ApplyKeySlider(MAXV, MINV, bodyMusic);
+            musVol = ApplyKeySlider(_MAXV, _MINV, bodyMusic);
         }
-        else if (curY == 6f)
+        else if (curY == 6.5f)
         {
-            effVol = ApplyKeySlider(MAXV, MINV, bodyEffect);
+            effVol = ApplyKeySlider(_MAXV, _MINV, bodyEffect);
         }
     }
 
@@ -56,7 +56,7 @@ public class SliderAudio : MonoBehaviour
             if (min <= curX
             && curX <= max)
             {
-                float tmp = (dire * (max - min) / 100);
+                float tmp = dire * (max - min) / 100;
                 float nowX = (curX + tmp > max) ? max : ((curX + tmp < min) ? min : curX + tmp);
                 slider.position = new Vector2(nowX, slider.position.y);
             }

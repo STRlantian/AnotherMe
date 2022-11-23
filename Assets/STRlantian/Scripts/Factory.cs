@@ -56,11 +56,11 @@ namespace STRlantian.Factory
 
         public const int MUSIC = 0, EFFECT = 1, SHAKE = 2, BIND = 3;
 
-        private static readonly String DIR = Application.dataPath;
-        private const String FILENAME = "GameSettings.txt";
-        private static readonly String PATH = DIR + "\\" + FILENAME;
+        private static readonly String _DIR = Application.dataPath;
+        private const String _FILENAME = "GameSettings.txt";
+        private static readonly String _PATH = _DIR + "\\" + _FILENAME;
 
-        private static readonly String[] BASECONTENT = 
+        private static readonly String[] _BASECONTENT = 
             {
                 "#Do NOT edit unless you know what are these",
                 "Music_Volumn:",   //Music Vol     de 100-100
@@ -71,15 +71,15 @@ namespace STRlantian.Factory
 
         public static bool CheckSettings()
         {
-            if(File.Exists(PATH))
+            if(File.Exists(_PATH))
             {
-                String[] content = File.ReadAllLines(PATH);
+                String[] content = File.ReadAllLines(_PATH);
                 try
                 {
                     bool[] tmp = new bool[4];
                     for(int i = 1; i <= 4; i++)
                     {
-                        tmp.SetValue(content.GetValue(i).ToString().Contains(BASECONTENT.GetValue(i).ToString()), i - 1);
+                        tmp.SetValue(content.GetValue(i).ToString().Contains(_BASECONTENT.GetValue(i).ToString()), i - 1);
                     }
                     return tmp[0] && tmp[1] && tmp[2] && tmp[3];
                 }catch(IndexOutOfRangeException exc)
@@ -127,28 +127,28 @@ namespace STRlantian.Factory
             }
             else
             {
-                String[] file = (String[]) BASECONTENT.Clone();
-                for(int i = 1; i <= BASECONTENT.Length - 1; i++)
+                String[] file = (String[]) _BASECONTENT.Clone();
+                for(int i = 1; i <= _BASECONTENT.Length - 1; i++)
                 {
                     file[i] += v[i - 1].ToString();
                     SETTINGLIST.SetValue(v[i - 1], i - 1);
                 }
-                File.WriteAllLines(PATH, file);
+                File.WriteAllLines(_PATH, file);
                 LoadSettings();
             }
         }
 
         public static void CreateSettings()
         {
-            String[] dft = (String[]) BASECONTENT.Clone();
+            String[] dft = (String[]) _BASECONTENT.Clone();
             dft[1] = dft[1] + "100";
             dft[2] = dft[2] + "100";
             dft[3] = dft[3] + "0";
             dft[4] = dft[4] + "0";
     
-            Directory.CreateDirectory(DIR);
-            File.Create(PATH).Close();
-            File.WriteAllLines(PATH, dft);
+            Directory.CreateDirectory(_DIR);
+            File.Create(_PATH).Close();
+            File.WriteAllLines(_PATH, dft);
         }
      
         public static void LoadSettings()
@@ -157,7 +157,7 @@ namespace STRlantian.Factory
             {
                 CreateSettings();
             }
-            String[] list = File.ReadAllLines(PATH);
+            String[] list = File.ReadAllLines(_PATH);
             for (int i = 1; i <= 4; i++)
             {
                 try
@@ -180,7 +180,6 @@ namespace STRlantian.Factory
     {
         public const int CHOICE_X = 0;
         public const int CHOICE_Y = 1;
-
 
         public static void CursorMove(float[] list, Rigidbody2D body, int which)
         {
@@ -210,41 +209,45 @@ namespace STRlantian.Factory
             KeyCode add = which == CHOICE_X ? AKey.left : AKey.up;
             KeyCode minus = which == CHOICE_X ? AKey.right : AKey.down;
 
-            if (Input.GetKeyDown(minus))
+            if(Input.GetKeyDown(minus)
+                || Input.GetKeyDown(add))
             {
-                if (index >= 0
-                && index <= list.Length - 2)
+                if (Input.GetKeyDown(minus))
                 {
-                    index++;
+                    if (index >= 0
+                    && index <= list.Length - 2)
+                    {
+                        index++;
+                    }
+                    else
+                    {
+                        index = 0;
+                    }
+                }
+                else if (Input.GetKeyDown(add))
+                {
+                    if (index >= 1
+                        && index <= list.Length - 1)
+                    {
+                        index--;
+                    }
+                    else
+                    {
+                        index = list.Length - 1;
+                    }
+                }
+                if (which == CHOICE_X)
+                {
+                    body.position = new Vector2(list[index], body.position.y);
+                }
+                else if (which == CHOICE_Y)
+                {
+                    body.position = new Vector2(body.position.x, list[index]);
                 }
                 else
                 {
-                    index = 0;
+                    throw new Exception("Congratulations, you made a bug");
                 }
-            }
-            else if (Input.GetKeyDown(add))
-            {
-                if (index >= 1
-                    && index <= list.Length - 1)
-                {
-                    index--;
-                }
-                else
-                {
-                    index = list.Length - 1;
-                }
-            }
-            if (which == CHOICE_X)
-            {
-                body.position = new Vector2(list[index], body.position.y);
-            }
-            else if (which == CHOICE_Y)
-            {
-                body.position = new Vector2(body.position.x, list[index]);
-            }
-            else
-            {
-                throw new Exception("Congratulations, you made a bug");
             }
         }
     }
