@@ -5,6 +5,7 @@ using STRlantian.KeyController;
 using System.Collections;
 using System.ComponentModel;
 using System.Net;
+using System.Threading;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -80,6 +81,7 @@ public class CursorStart : MonoBehaviour
         while (bg.color.a > 0)
         {
             bg.color = new Color(255, 255, 255, bg.color.a - 1);
+            Thread.Sleep(5);
             yield return null;
         }
     }
@@ -122,6 +124,7 @@ public class CursorStart : MonoBehaviour
             {
                 break;
             }
+            Thread.Sleep(5);
             yield return null;
         }
         body.position = new Vector2(body.position.x, des);

@@ -17,6 +17,10 @@ public class CursorOpt : MonoBehaviour
 
     void Start()
     {
+        foreach(SpriteRenderer rd in option.GetComponentsInChildren<SpriteRenderer>())
+        {
+            rd.color = new Color(255, 255, 255, 0);
+        }
         AShakerFactory.EnableShakers(shakers);
         option.GetComponent<RectTransform>().position = new Vector2(0, 30);
         _tempList = (byte[])ASettingFactory.GetSettings().Clone();
