@@ -1,9 +1,6 @@
 ﻿using STRlantian.KeyController;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using Unity.Collections.LowLevel.Unsafe;
 using UnityEngine;
 
 namespace STRlantian.Factory
@@ -163,9 +160,7 @@ namespace STRlantian.Factory
                 try
                 {
                     String sub = list[i].Substring(list[i].IndexOf(':') + 1);
-                    Debug.Log("Parametre sub: " + sub);
                     byte v = Byte.Parse(sub);
-                    Debug.Log("Parametre v: " + v);
                     SETTINGLIST.SetValue(v, i - 1);
                 }catch (IndexOutOfRangeException exc)
                 {

@@ -1,37 +1,55 @@
 using UnityEngine;
-using STRlantian.Factory;
 using STRlantian.KeyController;
 using Krivodeling.UI.Effects;
+using STRlantian.Factory;
+using System.Collections;
+using Unity.VisualScripting;
+using System.Text;
+using System.Data;
 
 public class CursorOpt : MonoBehaviour
 {
     //在设置界面的指针
     public Rigidbody2D cursor;
+
     public GameObject option;
     public GameObject start;
     public GameObject check;
+
+    public Animator sAnim, oAnim;
     public Animator[] shakers;
+
     public SpriteRenderer bindA, bindB;
+
     private static readonly float[] _yList = {11f, 6.5f, 1f, -4f, -10f};
     private static byte[] _tempList = new byte[4];
 
     void Start()
     {
-        foreach(SpriteRenderer rd in option.GetComponentsInChildren<SpriteRenderer>())
-        {
-            rd.color = new Color(255, 255, 255, 0);
-        }
-        AShakerFactory.EnableShakers(shakers);
-        option.GetComponent<RectTransform>().position = new Vector2(0, 30);
+        option.GetComponent<RectTransform>().position = new Vector2(0, 28);
+        ASettingFactory.LoadSettings();
         _tempList = (byte[])ASettingFactory.GetSettings().Clone();
+        byte i = 0;
+        foreach (var ele in _tempList)
+        {
+            StringBuilder b = new StringBuilder("Settings param ");
+            b.Append(i);
+            b.Append(": ");
+            b.Append(ele);
+            Debug.Log(b);
+            i++;
+        }
 
+        AKey.UpdateKey(0);
         if((byte) _tempList.GetValue(ASettingFactory.BIND) == 1)
         {
+            AKey.UpdateKey(1);
             bindA.color = new Color(255, 255, 255, 0);
             bindB.color = new Color(255, 255, 255, 255);
         }
         if((byte) _tempList.GetValue(ASettingFactory.SHAKE) == 1)
         {
+            AShakerFactory.EnableShakers(shakers);
             check.GetComponent<SpriteRenderer>().color = new Color(255, 255, 255, 255);
         }
     }
@@ -74,7 +92,7 @@ public class CursorOpt : MonoBehaviour
             {
                 byte res = (byte)(_tempList[ASettingFactory.BIND] == 0 ? 1 : 0);
                 _tempList.SetValue(res, ASettingFactory.BIND);
-                AKey.UpdateKey(_tempList[ASettingFactory.BIND]);
+                AKey.UpdateKey(res);
                 if (res == 1)
                 {
                     bindA.color = new Color(255, 255, 255, 0);
@@ -100,33 +118,19 @@ public class CursorOpt : MonoBehaviour
     {
         if(CursorStart.isOptPage)
         {
+            StartCoroutine(SetBoolean());
             GameObject.Find("Blur").GetComponent<UIBlur>().EndBlur(2);
-            /*
-            Rigidbody2D[] optList = this.option.GetComponentsInChildren<Rigidbody2D>();
-            foreach(Rigidbody2D option in optList)
-            {
-                for (float mul = 1f; option.position.y < 30; mul++)
-                {
-                    option.position = new Vector2(0, mul * mul);
-                }
-                option.position = new Vector2(0, 30);
-            }
-
-            Rigidbody2D[] startList = this.start.GetComponentsInChildren<Rigidbody2D>();
-            foreach(Rigidbody2D start in startList)
-            {
-                start.position = new Vector2(start.position.x, -20);
-                for (float i = 2f; start.position.y < 0; i--)
-                {
-                    start.position = new Vector2(0, -20f + i * i);
-                }
-                start.position = new Vector2(0, 0);
-            }
-
-            */
-            option.transform.position = new Vector2(0, 30);
-            start.transform.position = new Vector2(0, 0);
             CursorStart.isOptPage = false;
         }
+    }
+
+    private IEnumerator SetBoolean()
+    {
+        cursor.position = new Vector2(-14.3f, -20f);
+        sAnim.SetBool("ShowOptionPage", false);
+        oAnim.SetBool("ShowOptionPage", false);
+        oAnim.SetBool("ShowStartPage", true);
+        sAnim.SetBool("ShowStartPage", true);
+        yield return null;
     }
 }

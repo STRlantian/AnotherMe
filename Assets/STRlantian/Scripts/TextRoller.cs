@@ -3,29 +3,45 @@ using System.Threading;
 using TMPro;
 using UnityEngine;
 
-namespace STRlantian
+namespace STRlantian.TextRoller
 {
     public class TextRoller : MonoBehaviour
     {
-        private string text;
         public TextMeshPro mesh;
+        public int speed;
+        private int _num;
+        private string[] _stringList;
         private void Start()
         {
-            text = mesh.text;
-            StartRoll();
+            _num = 0;
         }
-        public void StartRoll()
+        public void SetList(string[] list)
         {
-            StartCoroutine(Roll());
+            _stringList = list;
         }
-    
-        private IEnumerator Roll()
+        public void NextRoll()
+        {
+            _num++;
+            StartCoroutine(Roll(_stringList[_num]));
+        }
+
+        public void SetNull()
+        {
+            _num = 0;
+            mesh.text = null;
+        }
+        public void RollText(int num)
+        {
+            _num = num;
+            StartCoroutine(Roll(_stringList[num]));
+        }
+        private IEnumerator Roll(string text)
         {
             mesh.text = null;
-            for(int i = 0; i < text.Length; i++) 
+            for (int i = 0; i < text.Length; i++) 
             {
                 mesh.text += text.ToCharArray()[i];
-                Thread.Sleep(5);
+                Thread.Sleep(speed);
                 yield return null;
             }
         }
