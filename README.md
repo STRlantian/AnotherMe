@@ -18,15 +18,15 @@ This game should be provided for FREE on itch.io (maybe on steam later)
 
 STRlantian -> Art, Programme, Story  
 
-[Bilibili Channel](https://space.bilibili.com/356775820) | [Github Channel](https://github.com/Strlantian/)  
+[Bilibili Channel](https://space.bilibili.com/356775820) | [Github](https://github.com/Strlantian/)  
 
 RhythmLove -> Art  
 
-[Bilibili Channel](https://space.bilibili.com/506815477) | [Github Channel](https://github.com/#/)  
+[Bilibili Channel](https://space.bilibili.com/506815477) 
 
 JoeMichaelQiao -> Spectator/Supporter  
 
-[Bilibili Channel](https://space.bilibili.com/583324741) | [Github Channel](https://github.com/JoeMichaelQiao/)  
+[Bilibili Channel](https://space.bilibili.com/583324741) | [Github](https://github.com/JoeMichaelQiao/)  
 
 # Support  
 
