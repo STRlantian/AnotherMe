@@ -58,17 +58,19 @@
   <ItemGroup>
     <Compile Include="Assets\Krivodeling\UI\Effects\Blur\Scripts\UIBlurWithCanvasGroup.cs" />
     <Compile Include="Assets\Krivodeling\UI\Effects\Blur\Scripts\FlipMode.cs" />
-    <Compile Include="Assets\STRlantian\Scripts\Start\CursorOpt.cs" />
-    <Compile Include="Assets\STRlantian\Scripts\Start\SliderAudio.cs" />
+    <Compile Include="Assets\STRlantian\Scripts\Game\Start\CursorOpt.cs" />
+    <Compile Include="Assets\STRlantian\Scripts\Game\Start\SliderAudio.cs" />
     <Compile Include="Assets\STRlantian\Scripts\Gameplay\KeyController.cs" />
     <Compile Include="Assets\STRlantian\Scripts\GameEffects\TextRoller.cs" />
     <Compile Include="Assets\Krivodeling\UI\Effects\Blur\Scripts\UIBlur.cs" />
     <Compile Include="Assets\STRlantian\Scripts\Factory.cs" />
-    <Compile Include="Assets\STRlantian\Scripts\Start\CursorStart.cs" />
+    <Compile Include="Assets\STRlantian\Scripts\Game\Start\CursorStart.cs" />
     <Compile Include="Assets\STRlantian\Scripts\Gameplay\PlayerBasic.cs" />
     <Compile Include="Assets\STRlantian\Scripts\Gameplay\FPSBoard.cs" />
     <Compile Include="Assets\STRlantian\Scripts\Gameplay\DialogueBasic.cs" />
     <Compile Include="Assets\STRlantian\Scripts\GameEffects\DialogueRoller.cs" />
+    <Compile Include="Assets\STRlantian\Scripts\Gameplay\NPCBasic.cs" />
+    <Compile Include="Assets\STRlantian\Scripts\Game\Test\TestPlayer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

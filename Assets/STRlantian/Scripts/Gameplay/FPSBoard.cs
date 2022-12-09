@@ -8,7 +8,6 @@ namespace STRlantian.Play.FPS
     public class FPSBoard : MonoBehaviour
     {
         public TextMeshPro mesh;
-        private Thread fps;
 
         private void Update()
         {
