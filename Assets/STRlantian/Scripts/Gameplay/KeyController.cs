@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
 
-namespace STRlantian.KeyController
+namespace STRlantian.Play.KeyBinds
 {
-    //自主键位设置
     public abstract class AKey
     { 
         public static KeyCode a, b, up, down, left, right;

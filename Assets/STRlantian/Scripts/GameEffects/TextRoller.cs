@@ -3,12 +3,12 @@ using System.Threading;
 using TMPro;
 using UnityEngine;
 
-namespace STRlantian.TextRoller
+namespace STRlantian.Effects.Roller.Text
 {
     public class TextRoller : MonoBehaviour
     {
         public TextMeshPro mesh;
-        public int speed;
+        public int wait;
         private int _num;
         private string[] _stringList;
         private void Start()
@@ -41,7 +41,7 @@ namespace STRlantian.TextRoller
             for (int i = 0; i < text.Length; i++) 
             {
                 mesh.text += text.ToCharArray()[i];
-                Thread.Sleep(speed);
+                Thread.Sleep(wait);
                 yield return null;
             }
         }

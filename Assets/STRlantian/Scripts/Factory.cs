@@ -1,4 +1,4 @@
-﻿using STRlantian.KeyController;
+﻿using STRlantian.Play.KeyBinds;
 using System;
 using System.IO;
 using UnityEngine;
@@ -8,18 +8,6 @@ namespace STRlantian.Factory
     //各个工厂
     public abstract class AShakerFactory
     {
-        /*
-        private static List<Animator> shakers = new List<Animator>();
-        public static void RegisterShakers(List<Animator> anims)
-        {
-            shakers.AddRange(anims);
-        }
-        public static void RegisterShakers(Animator anim)
-        {
-            shakers.Add(anim);
-        }
-        */
-
         public static void EnableShakers(Animator[] shakers)
         {
             if (ASettingFactory.GetSettings(ASettingFactory.SHAKE) == 1)

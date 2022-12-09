@@ -1,7 +1,6 @@
 using UnityEngine;
 using STRlantian.Factory;
-using STRlantian.KeyController;
-using UnityEditor.UIElements;
+using STRlantian.Play.KeyBinds;
 
 public class SliderAudio : MonoBehaviour
 {
@@ -57,7 +56,7 @@ public class SliderAudio : MonoBehaviour
             if (min <= curX
             && curX <= max)
             {
-                float tmp = dire * (max - min) / 100;
+                float tmp = Time.deltaTime * dire * (max - min) / 100;
                 float nowX = (curX + tmp > max) ? max : ((curX + tmp < min) ? min : curX + tmp);
                 slider.position = new Vector2(nowX, slider.position.y);
             }
