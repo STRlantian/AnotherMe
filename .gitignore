@@ -13,3 +13,5 @@
 /Assets/GameSettings.txt
 /Assets/GameSave.txt
 /Library
+*.unity
+/Assets/STRlantian/Scenes/StartIntro/TestScene.unity
