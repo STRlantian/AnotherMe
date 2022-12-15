@@ -9,8 +9,8 @@ namespace STRlantian.Effects.Roller.Text
     {
         public TextMeshPro mesh;
         public int wait;
+        public string[] _stringList;
         private int _num;
-        private string[] _stringList;
         private void Start()
         {
             _num = 0;

@@ -1,7 +1,6 @@
-﻿using STRlantian.Play.NPC;
-using STRlantian.Play.Player;
+﻿using STRlantian.GamePlay.Characters;
 using UnityEngine;
-public class TestPlayer : MonoBehaviour
+public class TestScene : MonoBehaviour
 {
     NPCBasic[] npc;
     PlayerBasic player;

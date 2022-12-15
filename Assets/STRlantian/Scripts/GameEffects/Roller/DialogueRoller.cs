@@ -1,10 +1,8 @@
-﻿using STRlantian.Play.Dialogue;
-using STRlantian.Play.KeyBinds;
+﻿using STRlantian.GamePlay.Characters;
 using System;
 using System.Collections;
 using System.Threading;
 using TMPro;
-using Unity.Collections.LowLevel.Unsafe;
 using UnityEngine;
 
 namespace STRlantian.Effects.Roller.Dialogue

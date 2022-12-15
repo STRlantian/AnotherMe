@@ -1,6 +1,6 @@
 using UnityEngine;
 using STRlantian.Factory;
-using STRlantian.Play.KeyBinds;
+using STRlantian.GamePlay.KeyBinds;
 
 public class SliderAudio : MonoBehaviour
 {

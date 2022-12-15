@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace STRlantian.Play.KeyBinds
+namespace STRlantian.GamePlay.KeyBinds
 {
     public abstract class AKey
     { 

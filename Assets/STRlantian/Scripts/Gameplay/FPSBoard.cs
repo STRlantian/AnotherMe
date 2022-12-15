@@ -3,7 +3,7 @@ using System.Threading;
 using TMPro;
 using UnityEngine;
 
-namespace STRlantian.Play.FPS
+namespace STRlantian.GamePlay.FPS
 {
     public class FPSBoard : MonoBehaviour
     {

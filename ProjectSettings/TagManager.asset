@@ -42,9 +42,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Cursor
+  - name: Game
+    uniqueID: 1548617657
+    locked: 0
+  - name: Dialogue
     uniqueID: 681617837
     locked: 0
-  - name: Button
+  - name: Cursor
     uniqueID: 3709709121
+    locked: 0
+  - name: Button
+    uniqueID: 934518507
     locked: 0

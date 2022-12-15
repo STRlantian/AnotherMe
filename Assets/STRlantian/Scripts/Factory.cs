@@ -1,4 +1,4 @@
-﻿using STRlantian.Play.KeyBinds;
+﻿using STRlantian.GamePlay.KeyBinds;
 using System;
 using System.IO;
 using UnityEngine;

@@ -1,6 +1,6 @@
 using Krivodeling.UI.Effects;
 using STRlantian.Factory;
-using STRlantian.Play.KeyBinds;
+using STRlantian.GamePlay.KeyBinds;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;

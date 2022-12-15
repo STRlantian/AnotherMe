@@ -1,5 +1,5 @@
 using UnityEngine;
-using STRlantian.Play.KeyBinds;
+using STRlantian.GamePlay.KeyBinds;
 using Krivodeling.UI.Effects;
 using STRlantian.Factory;
 using System.Collections;

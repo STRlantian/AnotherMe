@@ -1,9 +1,9 @@
 ﻿using STRlantian.Effects.Roller.Dialogue;
-using STRlantian.Play.KeyBinds;
+using STRlantian.GamePlay.KeyBinds;
 using TMPro;
 using UnityEngine;
 
-namespace STRlantian.Play.Dialogue
+namespace STRlantian.GamePlay.Characters
 {
     public class DialogueBasic : MonoBehaviour
     {

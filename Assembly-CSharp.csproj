@@ -8,7 +8,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <ProjectGuid>{3BC6F2C6-7AF8-127C-80EA-F3E263E65627}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -57,26 +58,27 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Krivodeling\UI\Effects\Blur\Scripts\UIBlurWithCanvasGroup.cs" />
+    <Compile Include="Assets\STRlantian\Scripts\Gameplay\Characters\Attributes.cs" />
     <Compile Include="Assets\Krivodeling\UI\Effects\Blur\Scripts\FlipMode.cs" />
+    <Compile Include="Assets\STRlantian\Scripts\Gameplay\Characters\DialogueBasic.cs" />
     <Compile Include="Assets\STRlantian\Scripts\Game\Start\CursorOpt.cs" />
     <Compile Include="Assets\STRlantian\Scripts\Game\Start\SliderAudio.cs" />
+    <Compile Include="Assets\STRlantian\Scripts\Gameplay\FPSBoard.cs" />
+    <Compile Include="Assets\STRlantian\Scripts\GameEffects\Audio\MusicInOut.cs" />
     <Compile Include="Assets\STRlantian\Scripts\Gameplay\KeyController.cs" />
-    <Compile Include="Assets\STRlantian\Scripts\GameEffects\TextRoller.cs" />
+    <Compile Include="Assets\STRlantian\Scripts\Game\Test\TestScene.cs" />
+    <Compile Include="Assets\STRlantian\Scripts\Gameplay\Characters\PlayerBasic.cs" />
+    <Compile Include="Assets\STRlantian\Scripts\GameEffects\Roller\TextRoller.cs" />
     <Compile Include="Assets\Krivodeling\UI\Effects\Blur\Scripts\UIBlur.cs" />
+    <Compile Include="Assets\STRlantian\Scripts\Gameplay\Characters\NPCBasic.cs" />
     <Compile Include="Assets\STRlantian\Scripts\Factory.cs" />
     <Compile Include="Assets\STRlantian\Scripts\Game\Start\CursorStart.cs" />
-    <Compile Include="Assets\STRlantian\Scripts\Gameplay\PlayerBasic.cs" />
-    <Compile Include="Assets\STRlantian\Scripts\Gameplay\FPSBoard.cs" />
-    <Compile Include="Assets\STRlantian\Scripts\Gameplay\DialogueBasic.cs" />
-    <Compile Include="Assets\STRlantian\Scripts\GameEffects\DialogueRoller.cs" />
-    <Compile Include="Assets\STRlantian\Scripts\Gameplay\NPCBasic.cs" />
-    <Compile Include="Assets\STRlantian\Scripts\Game\Test\TestPlayer.cs" />
+    <Compile Include="Assets\STRlantian\Scripts\GameEffects\Roller\DialogueRoller.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
-    <None Include="Assets\Resources\Images\Characters\STRlantian\a1Readme.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
@@ -872,6 +874,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\STRlantian\AboutScenes.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
