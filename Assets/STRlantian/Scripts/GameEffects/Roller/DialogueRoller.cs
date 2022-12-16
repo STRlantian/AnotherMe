@@ -5,22 +5,28 @@ using System.Threading;
 using TMPro;
 using UnityEngine;
 
-namespace STRlantian.Effects.Roller.Dialogue
+namespace STRlantian.Effects.Roller
 {
-    public class DialogueRoller : MonoBehaviour
+    public class DialogueRoller : ARoller
     {
-        public TextMeshPro mesh;
-        public int wait;
-        public string[][] texts;
-        public DialogueBasic dia;
-        private int _num = 0;
+        [SerializeField]
+        private string[] textsKey;
+        [SerializeField]
+        private string[] textsValue;
+        [SerializeField]
+        private DialogueBasic dia;
+        private string[][] texts;
         private string[] _current;
 
+        private void Awake()
+        {
+           
+        }
         public void StartRoll(int which)
         {
-            _num = 0;
+            num = 0;
             _current = texts[which];
-            StartCoroutine(Roll(_current[_num]));
+            StartCoroutine(Roll(_current[num]));
         }
 
         public void RegisterTexts(int code, string[] content)
@@ -29,13 +35,13 @@ namespace STRlantian.Effects.Roller.Dialogue
         }
         public void NextRoll()
         {
-            _num++;
+            num++;
             try
             {
-                StartCoroutine(Roll(_current[_num]));
+                StartCoroutine(Roll(_current[num]));
             }catch(IndexOutOfRangeException)
             {
-                _num = 0;
+                num = 0;
                 _current = null;
                 mesh.text = null;
                 dia.CloseDialogue();

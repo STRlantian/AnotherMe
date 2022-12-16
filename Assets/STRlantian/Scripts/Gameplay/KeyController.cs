@@ -4,10 +4,14 @@ namespace STRlantian.GamePlay.KeyBinds
 {
     public abstract class AKey
     { 
-        public static KeyCode a, b, up, down, left, right;
+        public static KeyCode a, b, k1, k2, k3, k4, up, down, left, right;
         
         public static void UpdateKey()
         {
+            k1 = KeyCode.D;
+            k2 = KeyCode.F;
+            k3 = KeyCode.J;
+            k4 = KeyCode.K;
             int plan = Factory.ASettingFactory.GetSettings(Factory.ASettingFactory.BIND);
             if (plan == 0)
             {

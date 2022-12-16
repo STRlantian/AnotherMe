@@ -5,8 +5,12 @@ namespace STRlantian.GamePlay.Characters
 {
     public class PlayerBasic : NPCBasic
     {
-        public Transform bg;
-        public float speed = 5;
+        [SerializeField]
+        private Transform bg;
+        [SerializeField]
+        private float speed = 5;
+        [SerializeField]
+        private bool controlable;
 
         private void Start()
         {

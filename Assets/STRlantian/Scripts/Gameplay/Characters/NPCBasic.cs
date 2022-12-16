@@ -4,13 +4,21 @@ namespace STRlantian.GamePlay.Characters
 {
     public class NPCBasic : MonoBehaviour
     {
-        public string[] words;
-        public BoxCollider2D box;
-        public Rigidbody2D body;
-        public bool interactable;
-        public Sprite up, down, left, right;
-        public SpriteRenderer rd;
-        public Animator sprAnim;
+        [SerializeField] 
+        protected BoxCollider2D box;
+        [SerializeField]
+        protected Rigidbody2D body;
+        [SerializeField] 
+        protected bool interactable;
+        [SerializeField] 
+        protected Sprite up, down, left, right;
+        [SerializeField] 
+        protected SpriteRenderer rd;
+        [SerializeField] 
+        protected Animator sprAnim;
+
+        [SerializeField]
+        private string[] words;
 
         void Start()
         {

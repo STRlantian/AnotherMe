@@ -4,11 +4,14 @@ using STRlantian.GamePlay.KeyBinds;
 
 public class SliderAudio : MonoBehaviour
 {
-    //在设置界面的两个滑块
-    public Rigidbody2D bodyMusic;
-    public Rigidbody2D bodyEffect;
-    public Rigidbody2D cursor;
     public static byte musVol, effVol;
+
+    [SerializeField]
+    private Rigidbody2D bodyMusic;
+    [SerializeField] 
+    private Rigidbody2D bodyEffect;
+    [SerializeField] 
+    private Rigidbody2D cursor;
     private const float _MAXV = 13.5f;
     private const float _MINV = -1f;
 

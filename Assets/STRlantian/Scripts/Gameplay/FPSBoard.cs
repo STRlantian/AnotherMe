@@ -7,7 +7,8 @@ namespace STRlantian.GamePlay.FPS
 {
     public class FPSBoard : MonoBehaviour
     {
-        public TextMeshPro mesh;
+        [SerializeField]
+        private TextMeshPro mesh;
 
         private void Update()
         {

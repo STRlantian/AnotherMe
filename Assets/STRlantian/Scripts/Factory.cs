@@ -5,7 +5,6 @@ using UnityEngine;
 
 namespace STRlantian.Factory
 {
-    //各个工厂
     public abstract class AShakerFactory
     {
         public static void EnableShakers(Animator[] shakers)

@@ -6,9 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/STRlantian/Scenes/StartIntro/TestScene.unity
+    guid: e194a12927f593941bce29ed255fca77
+  - enabled: 1
     path: Assets/STRlantian/Scenes/StartIntro/StartScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/STRlantian/Scenes/StartIntro/TestScene.unity
-    guid: e194a12927f593941bce29ed255fca77
+    path: Assets/STRlantian/Scenes/StartIntro/IntroScene.unity
+    guid: 5e1ee2adc1986454bb4c36fb056c4a38
   m_configObjects: {}

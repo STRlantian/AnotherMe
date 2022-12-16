@@ -10,16 +10,20 @@ using System.Data;
 public class CursorOpt : MonoBehaviour
 {
     //在设置界面的指针
-    public Rigidbody2D cursor;
-
-    public GameObject option;
-    public GameObject start;
-    public GameObject check;
-
-    public Animator sAnim, oAnim;
-    public Animator[] shakers;
-
-    public SpriteRenderer bindA, bindB;
+    [SerializeField]
+    private Rigidbody2D cursor;
+    [SerializeField] 
+    private GameObject option;
+    [SerializeField] 
+    private GameObject start;
+    [SerializeField] 
+    private GameObject check;
+    [SerializeField]
+    private Animator sAnim, oAnim;
+    [SerializeField] 
+    private Animator[] shakers;
+    [SerializeField] 
+    private SpriteRenderer bindA, bindB;
 
     private static readonly float[] _yList = {11f, 6.5f, 1f, -4f, -10f};
     private static byte[] _tempList = new byte[4];
@@ -82,11 +86,13 @@ public class CursorOpt : MonoBehaviour
             float curY = cursor.position.y;
             if (curY == _yList[ASettingFactory.SHAKE])
             {
+                /*
                 byte shake = (byte)(_tempList[ASettingFactory.SHAKE] == 0 ? 1 : 0);
                 _tempList.SetValue(shake, ASettingFactory.SHAKE);
                 AShakerFactory.EnableShakers(shakers, shake == 1);
                 check.GetComponent<SpriteRenderer>().color = new Color(255, 255, 255, shake == 1 ? 255 : 0);
                 //check.SetBool("keyDown", !check.GetBool("keyDown"));
+                */
             }
             else if (curY == _yList[ASettingFactory.BIND])
             {

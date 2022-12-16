@@ -8,17 +8,18 @@ using UnityEngine.SceneManagement;
 public class CursorStart : MonoBehaviour
 {
     public bool SAFE = true;
-
-    public GameObject start;
-    public GameObject option;
-
-    public Rigidbody2D cursor;
-
-    public Animator sAnim, oAnim;
-
     public static bool isOptPage = false;
 
+    [SerializeField]
+    private GameObject start;
+    [SerializeField] 
+    private GameObject option;
+    [SerializeField]
+    private Rigidbody2D cursor;
+    [SerializeField] 
+    private Animator sAnim, oAnim;
     private bool _isContinuable = false;
+
     private static readonly float[] _startXList = {-14.3f, -3.5f, 7.5f};
 
     void Update()
@@ -76,7 +77,6 @@ public class CursorStart : MonoBehaviour
 
     private IEnumerator SetBoolean()
     {
-        cursor.position = new Vector2(114, 514); //Don't ask
         sAnim.SetBool("ShowStartPage", false);
         oAnim.SetBool("ShowStartPage", false);
         sAnim.SetBool("ShowOptionPage", true);

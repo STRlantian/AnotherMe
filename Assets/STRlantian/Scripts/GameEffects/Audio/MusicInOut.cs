@@ -7,9 +7,12 @@ namespace Assets.STRlantian.Scripts.GameEffects.Audio
 {
     public class MusicInOut : MonoBehaviour
     {
-        public AudioSource au;
-        public int wait = 3;
+        [SerializeField] 
+        private AudioSource au;
+        [SerializeField]
+        private int wait = 3;
         private float vol;
+
         private void Start()
         {
             ASettingFactory.LoadSettings();

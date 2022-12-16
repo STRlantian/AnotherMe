@@ -2,8 +2,11 @@
 using UnityEngine;
 public class TestScene : MonoBehaviour
 {
-    NPCBasic[] npc;
-    PlayerBasic player;
+    [SerializeField]
+    private NPCBasic[] npc;
+    [SerializeField]
+    private PlayerBasic player;
+
     void Start()
     {
 

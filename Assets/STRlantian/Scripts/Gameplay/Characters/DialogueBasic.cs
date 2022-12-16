@@ -1,4 +1,4 @@
-﻿using STRlantian.Effects.Roller.Dialogue;
+﻿using STRlantian.Effects.Roller;
 using STRlantian.GamePlay.KeyBinds;
 using TMPro;
 using UnityEngine;
@@ -7,9 +7,13 @@ namespace STRlantian.GamePlay.Characters
 {
     public class DialogueBasic : MonoBehaviour
     {
-        public Animator anim;
-        public DialogueRoller roller;
-        public bool isDialogueMode = false;
+        [SerializeField]
+        private Animator anim;
+        [SerializeField]
+        private DialogueRoller roller;
+        [SerializeField]
+        private bool isDialogueMode = false;
+
         void Start()
         {
             anim.SetBool("ShowDialogue", false);

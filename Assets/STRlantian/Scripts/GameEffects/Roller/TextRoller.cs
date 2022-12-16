@@ -3,17 +3,16 @@ using System.Threading;
 using TMPro;
 using UnityEngine;
 
-namespace STRlantian.Effects.Roller.Text
+namespace STRlantian.Effects.Roller
 {
-    public class TextRoller : MonoBehaviour
+    public class TextRoller : ARoller
     {
-        public TextMeshPro mesh;
-        public int wait;
-        public string[] _stringList;
-        private int _num;
+        [SerializeField]
+        private string[] _stringList;
+
         private void Start()
         {
-            _num = 0;
+            num = 0;
         }
         public void SetList(string[] list)
         {
@@ -21,18 +20,18 @@ namespace STRlantian.Effects.Roller.Text
         }
         public void NextRoll()
         {
-            _num++;
-            StartCoroutine(Roll(_stringList[_num]));
+            num++;
+            StartCoroutine(Roll(_stringList[num]));
         }
 
         public void SetNull()
         {
-            _num = 0;
+            num = 0;
             mesh.text = null;
         }
         public void RollText(int num)
         {
-            _num = num;
+            this.num = num;
             StartCoroutine(Roll(_stringList[num]));
         }
         private IEnumerator Roll(string text)
