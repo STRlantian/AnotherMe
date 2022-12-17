@@ -52,18 +52,22 @@ namespace STRlantian.GamePlay.Characters
             if(Input.GetKeyUp(AKey.up))
             {
                 SetMoveAnim(0, false);
+                rd.sprite = up;
             }
             if (Input.GetKeyUp(AKey.down))
             {
                 SetMoveAnim(1, false);
+                rd.sprite = down;
             }
             if (Input.GetKeyUp(AKey.left))
             {
                 SetMoveAnim(2, false);
+                rd.sprite = left;
             }
             if (Input.GetKeyUp(AKey.right))
             {
                 SetMoveAnim(3, false);
+                rd.sprite = right;
             }
         }
 
@@ -89,15 +93,15 @@ namespace STRlantian.GamePlay.Characters
         {
             if(dire == 1)
             {
-                rd.sprite = up;
                 SetMoveAnim(0, true);
                 SetMoveAnim(1, false);
+                sprAnim.SetInteger("facing", 1);
             }
             else
             {
-                rd.sprite = down;
                 SetMoveAnim(0, false);
                 SetMoveAnim(1, true);
+                sprAnim.SetInteger("facing", 0);
             }
             bg.position = new Vector2(bg.position.x, bg.position.y + speed * dire * -1 * Time.deltaTime); //Background turns
         }
@@ -106,15 +110,15 @@ namespace STRlantian.GamePlay.Characters
         {
             if (dire == 1)
             {
-                rd.sprite = right;
                 SetMoveAnim(2, false);
                 SetMoveAnim(3, true);
+                sprAnim.SetInteger("facing", 3);
             }
             else
             {
-                rd.sprite = left;
                 SetMoveAnim(2, true);
                 SetMoveAnim(3, false);
+                sprAnim.SetInteger("facing", 2);
             }
             bg.position = new Vector2(bg.position.x + speed * dire * -1 * Time.deltaTime, bg.position.y);
         }

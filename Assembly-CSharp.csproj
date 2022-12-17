@@ -60,6 +60,7 @@
     <Compile Include="Assets\STRlantian\Scripts\Gameplay\Characters\Attributes.cs" />
     <Compile Include="Assets\Krivodeling\UI\Effects\Blur\Scripts\FlipMode.cs" />
     <Compile Include="Assets\STRlantian\Scripts\Gameplay\Characters\DialogueBasic.cs" />
+    <Compile Include="Assets\STRlantian\Scripts\Gameplay\Characters\NPCFacing.cs" />
     <Compile Include="Assets\STRlantian\Scripts\Game\Start\CursorOpt.cs" />
     <Compile Include="Assets\STRlantian\Scripts\Game\Start\SliderAudio.cs" />
     <Compile Include="Assets\STRlantian\Scripts\Gameplay\FPSBoard.cs" />
@@ -69,11 +70,11 @@
     <Compile Include="Assets\STRlantian\Scripts\Gameplay\Characters\PlayerBasic.cs" />
     <Compile Include="Assets\STRlantian\Scripts\GameEffects\Roller\TextRoller.cs" />
     <Compile Include="Assets\Krivodeling\UI\Effects\Blur\Scripts\UIBlur.cs" />
+    <Compile Include="Assets\STRlantian\Scripts\GameEffects\Roller\ARoller.cs" />
     <Compile Include="Assets\STRlantian\Scripts\Gameplay\Characters\NPCBasic.cs" />
     <Compile Include="Assets\STRlantian\Scripts\Factory.cs" />
     <Compile Include="Assets\STRlantian\Scripts\Game\Start\CursorStart.cs" />
     <Compile Include="Assets\STRlantian\Scripts\GameEffects\Roller\DialogueRoller.cs" />
-    <Compile Include="Assets\STRlantian\Scripts\GameEffects\Roller\ARoller.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
