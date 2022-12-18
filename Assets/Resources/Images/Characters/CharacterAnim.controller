@@ -200,7 +200,7 @@ AnimatorState:
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
+  m_WriteDefaultValues: 0
   m_Mirror: 0
   m_SpeedParameterActive: 0
   m_MirrorParameterActive: 0
@@ -229,7 +229,7 @@ AnimatorState:
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
+  m_WriteDefaultValues: 0
   m_Mirror: 0
   m_SpeedParameterActive: 0
   m_MirrorParameterActive: 0
@@ -258,7 +258,7 @@ AnimatorState:
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
+  m_WriteDefaultValues: 0
   m_Mirror: 0
   m_SpeedParameterActive: 0
   m_MirrorParameterActive: 0
@@ -286,10 +286,10 @@ AnimatorState:
   - {fileID: -8850020140212134729}
   - {fileID: -1816928483530290530}
   m_StateMachineBehaviours:
-  - {fileID: -800975267826993204}
+  - {fileID: 7269733034582061678}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
+  m_WriteDefaultValues: 0
   m_Mirror: 0
   m_SpeedParameterActive: 0
   m_MirrorParameterActive: 0
@@ -332,22 +332,6 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
---- !u!114 &-800975267826993204
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3950bb84af3c9df478e89a4d54a18389, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  up: {fileID: -1506014466, guid: 72f7492858ebc74449eb02f2bea95766, type: 3}
-  down: {fileID: 1906545456, guid: 72f7492858ebc74449eb02f2bea95766, type: 3}
-  left: {fileID: -1973960254, guid: 72f7492858ebc74449eb02f2bea95766, type: 3}
-  right: {fileID: 1869065227, guid: 72f7492858ebc74449eb02f2bea95766, type: 3}
 --- !u!1102 &-312239359468593777
 AnimatorState:
   serializedVersion: 6
@@ -365,7 +349,7 @@ AnimatorState:
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
+  m_WriteDefaultValues: 0
   m_Mirror: 0
   m_SpeedParameterActive: 0
   m_MirrorParameterActive: 0
@@ -583,13 +567,13 @@ AnimatorStateMachine:
     m_Position: {x: 410, y: 200, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -4116188767488811327}
-    m_Position: {x: -160, y: 180, z: 0}
+    m_Position: {x: -160, y: 170, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -2742065230855175936}
-    m_Position: {x: 480, y: -30, z: 0}
+    m_Position: {x: 490, y: -40, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -312239359468593777}
-    m_Position: {x: 140, y: -130, z: 0}
+    m_Position: {x: 250, y: -160, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -1977278238928713863}
     m_Position: {x: -170, y: -10, z: 0}
@@ -715,3 +699,19 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!114 &7269733034582061678
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3950bb84af3c9df478e89a4d54a18389, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  up: {fileID: -1506014466, guid: 72f7492858ebc74449eb02f2bea95766, type: 3}
+  down: {fileID: 1906545456, guid: 72f7492858ebc74449eb02f2bea95766, type: 3}
+  left: {fileID: -1973960254, guid: 72f7492858ebc74449eb02f2bea95766, type: 3}
+  right: {fileID: 1869065227, guid: 72f7492858ebc74449eb02f2bea95766, type: 3}

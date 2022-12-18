@@ -9,7 +9,6 @@ using System.Data;
 
 public class CursorOpt : MonoBehaviour
 {
-    //在设置界面的指针
     [SerializeField]
     private Rigidbody2D cursor;
     [SerializeField] 
