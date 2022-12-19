@@ -39,7 +39,7 @@ JoeMichaelQiao -> Spectator/Supporter
 * RabbitonGames: Made me want to make this, who does also has great games
 * JoeMichaelQiao: Permanent supporter. And thx for giving ideas and readme.md
 * All the authors of the remixed music
-* All the friends that had to do with my devlopment
+* All the friends that had to do with my development
 * You: For having a look at the repository and maybe...Trying the game?
 
 # Support 💤
