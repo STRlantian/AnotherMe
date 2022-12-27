@@ -1,14 +1,14 @@
-﻿using STRlantian.GamePlay.KeyBinds;
+﻿using STRlantian.GamePlay.Characters.NPC;
+using STRlantian.GamePlay.KeyBinds;
 using UnityEngine;
 
 namespace STRlantian.GamePlay.Characters
 {
     public class PlayerBasic : NPCBasic
     {
-        [SerializeField]
-        private Transform bg;
-        [SerializeField]
-        private float speed = 5;
+        public float speed = 5;
+        public bool isMoving;
+
         [SerializeField]
         private bool controlable;
 
@@ -20,6 +20,7 @@ namespace STRlantian.GamePlay.Characters
 
         private void Update()
         {
+            transform.rotation = new Quaternion(0, 0, 0, transform.rotation.w);
             if(!Input.GetKey(AKey.up)
                 && !Input.GetKey(AKey.down)
                 && !Input.GetKey(AKey.left)
@@ -29,9 +30,12 @@ namespace STRlantian.GamePlay.Characters
                 sprAnim.SetBool("moveDown", false);
                 sprAnim.SetBool("moveLeft", false);
                 sprAnim.SetBool("moveRight", false);
+                isMoving = false;
+                body.velocity = new Vector2(0, 0);
             }
             else
             {
+                isMoving = true;
                 if (Input.GetKey(AKey.up))
                 {
                     PlayerMoveVer(1);
@@ -51,23 +55,23 @@ namespace STRlantian.GamePlay.Characters
             }
             if(Input.GetKeyUp(AKey.up))
             {
+                body.velocity = new Vector2(body.velocity.x, 0);
                 SetMoveAnim(0, false);
-                rd.sprite = up;
             }
             if (Input.GetKeyUp(AKey.down))
             {
+                body.velocity = new Vector2(body.velocity.x, 0);
                 SetMoveAnim(1, false);
-                rd.sprite = down;
             }
             if (Input.GetKeyUp(AKey.left))
             {
+                body.velocity = new Vector2(0, body.velocity.y);
                 SetMoveAnim(2, false);
-                rd.sprite = left;
             }
             if (Input.GetKeyUp(AKey.right))
             {
+                body.velocity = new Vector2(0, body.velocity.y);
                 SetMoveAnim(3, false);
-                rd.sprite = right;
             }
         }
 
@@ -103,7 +107,7 @@ namespace STRlantian.GamePlay.Characters
                 SetMoveAnim(1, true);
                 sprAnim.SetInteger("facing", 0);
             }
-            bg.position = new Vector2(bg.position.x, bg.position.y + speed * dire * -1 * Time.deltaTime); //Background turns
+            body.velocity = new Vector2(body.velocity.x, speed * dire);
         }
 
         private void PlayerMoveHor(int dire) //1 for right, -1 for left
@@ -120,7 +124,7 @@ namespace STRlantian.GamePlay.Characters
                 SetMoveAnim(3, false);
                 sprAnim.SetInteger("facing", 2);
             }
-            bg.position = new Vector2(bg.position.x + speed * dire * -1 * Time.deltaTime, bg.position.y);
+            body.velocity = new Vector2(speed * dire, body.velocity.y);
         }
     }
 }

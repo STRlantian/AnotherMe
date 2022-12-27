@@ -711,7 +711,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3950bb84af3c9df478e89a4d54a18389, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  up: {fileID: -1506014466, guid: 72f7492858ebc74449eb02f2bea95766, type: 3}
-  down: {fileID: 1906545456, guid: 72f7492858ebc74449eb02f2bea95766, type: 3}
-  left: {fileID: -1973960254, guid: 72f7492858ebc74449eb02f2bea95766, type: 3}
-  right: {fileID: 1869065227, guid: 72f7492858ebc74449eb02f2bea95766, type: 3}
+  up: {fileID: -1389161569, guid: 72f7492858ebc74449eb02f2bea95766, type: 3}
+  down: {fileID: 1999203231, guid: 72f7492858ebc74449eb02f2bea95766, type: 3}
+  left: {fileID: -1578527210, guid: 72f7492858ebc74449eb02f2bea95766, type: 3}
+  right: {fileID: -181780616, guid: 72f7492858ebc74449eb02f2bea95766, type: 3}
+  objName: Player

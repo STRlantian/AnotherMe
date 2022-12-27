@@ -2,13 +2,14 @@
 using System.Threading;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace STRlantian.GamePlay.FPS
 {
     public class FPSBoard : MonoBehaviour
     {
         [SerializeField]
-        private TextMeshPro mesh;
+        private Text mesh;
 
         private void Update()
         {

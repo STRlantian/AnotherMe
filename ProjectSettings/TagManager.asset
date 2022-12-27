@@ -54,3 +54,9 @@ TagManager:
   - name: Button
     uniqueID: 934518507
     locked: 0
+  - name: Player
+    uniqueID: 1701993825
+    locked: 0
+  - name: Camera
+    uniqueID: 1198419425
+    locked: 0

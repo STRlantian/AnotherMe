@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace STRlantian.GamePlay.Characters
+namespace STRlantian.GamePlay.Characters.NPC
 {
     public class NPCBasic : MonoBehaviour
     {
@@ -18,7 +18,9 @@ namespace STRlantian.GamePlay.Characters
         protected Animator sprAnim;
 
         [SerializeField]
-        private string[] words;
+        private PlayerBasic pl;
+        [SerializeField]
+        string[] words;
 
         void Start()
         {
@@ -30,7 +32,6 @@ namespace STRlantian.GamePlay.Characters
         {
 
         }
-
         public void Talk()
         {
 
