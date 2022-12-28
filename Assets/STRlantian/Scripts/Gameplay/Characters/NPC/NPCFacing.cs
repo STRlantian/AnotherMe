@@ -9,9 +9,15 @@ namespace STRlantian.GamePlay.Characters.NPC
         [SerializeField]
         private string objName;
 
+        private SpriteRenderer rd;
+
+        public override void OnStateMachineEnter(Animator animator, int stateMachinePathHash)
+        {
+            rd = GameObject.Find(objName).GetComponent<SpriteRenderer>();
+        }
+
         override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
-            SpriteRenderer rd = GameObject.Find(objName).GetComponent<SpriteRenderer>();
             int face = animator.GetInteger("facing");
             switch (face)
             {

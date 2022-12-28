@@ -8,7 +8,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <ProjectGuid>{3BC6F2C6-7AF8-127C-80EA-F3E263E65627}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -73,7 +74,9 @@
     <Compile Include="Assets\Krivodeling\UI\Effects\Blur\Scripts\UIBlur.cs" />
     <Compile Include="Assets\STRlantian\Scripts\GameEffects\Roller\ARoller.cs" />
     <Compile Include="Assets\STRlantian\Scripts\Gameplay\Characters\NPC\NPCBasic.cs" />
-    <Compile Include="Assets\STRlantian\Scripts\Factory.cs" />
+    <Compile Include="Assets\STRlantian\Scripts\Tools\Factory\ASettingFactory.cs" />
+    <Compile Include="Assets\STRlantian\Scripts\Tools\Factory\AShakerFactory.cs" />
+    <Compile Include="Assets\STRlantian\Scripts\Tools\Factory\ACursorFactory.cs" />
     <Compile Include="Assets\STRlantian\Scripts\Game\Start\CursorStart.cs" />
     <Compile Include="Assets\STRlantian\Scripts\GameEffects\Roller\DialogueRoller.cs" />
   </ItemGroup>
@@ -856,8 +859,7 @@
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
     </Reference>
   </ItemGroup>
-  <ItemGroup>
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

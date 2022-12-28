@@ -3,7 +3,7 @@
 在上面和下面这两个东西括起来的是注释
 */
 using Krivodeling.UI.Effects;
-using STRlantian.Factory;
+using STRlantian.Tools.Factory;
 using STRlantian.GamePlay.KeyBinds;
 using System.Collections;
 using UnityEngine;

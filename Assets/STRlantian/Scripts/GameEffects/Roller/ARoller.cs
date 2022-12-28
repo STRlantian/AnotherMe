@@ -1,13 +1,12 @@
-﻿using System.Collections;
-using TMPro;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.UI;
 
 namespace STRlantian.Effects.Roller
 {
     public class ARoller : MonoBehaviour
     {
         [SerializeField]
-        protected TextMeshPro mesh;
+        protected Text mesh;
         [SerializeField]
         protected int wait;
         [SerializeField]

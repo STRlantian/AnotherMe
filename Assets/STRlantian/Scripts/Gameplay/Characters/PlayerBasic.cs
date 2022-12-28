@@ -74,7 +74,7 @@ namespace STRlantian.GamePlay.Characters
                 SetMoveAnim(3, false);
             }
         }
-
+        
         private void SetMoveAnim(int i, bool b)
         {
             switch(i)

@@ -1,4 +1,4 @@
-﻿using STRlantian.Factory;
+﻿using STRlantian.Tools.Factory;
 using System.Collections;
 using System.Threading;
 using UnityEngine;

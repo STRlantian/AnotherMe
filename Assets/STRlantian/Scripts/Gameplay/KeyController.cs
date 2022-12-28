@@ -1,5 +1,5 @@
-﻿using System.Numerics;
-using UnityEngine;
+﻿using UnityEngine;
+using STRlantian.Tools.Factory;
 
 namespace STRlantian.GamePlay.KeyBinds
 {
@@ -9,7 +9,7 @@ namespace STRlantian.GamePlay.KeyBinds
         
         public static void UpdateKey()
         {
-            int plan = Factory.ASettingFactory.GetSettings(Factory.ASettingFactory.BIND);
+            int plan = ASettingFactory.GetSettings(ASettingFactory.BIND);
             Upd(plan);
         }
 

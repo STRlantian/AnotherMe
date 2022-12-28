@@ -1,6 +1,5 @@
 ﻿using STRlantian.Effects.Roller;
 using STRlantian.GamePlay.KeyBinds;
-using TMPro;
 using UnityEngine;
 
 namespace STRlantian.GamePlay.Characters

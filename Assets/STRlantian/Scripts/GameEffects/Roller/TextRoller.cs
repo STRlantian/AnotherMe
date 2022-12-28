@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.Threading;
-using TMPro;
 using UnityEngine;
 
 namespace STRlantian.Effects.Roller
