@@ -1,20 +1,28 @@
-﻿using STRlantian.Tools.Factory;
+﻿using STRlantian.Util.Factory;
 using System.Collections;
 using System.Threading;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
-namespace Assets.STRlantian.Scripts.GameEffects.Audio
+namespace STRlantian.GameEffects.Audio
 {
-    public class MusicInOut : MonoBehaviour
+    public class MusicPlayer : MonoBehaviour
     {
-        [SerializeField] 
+        [SerializeField]
         private AudioSource au;
         [SerializeField]
         private int wait = 3;
+        [SerializeField]
+        private Text alarm;
+        [SerializeField]
+        private string name;
+
         private float vol;
 
         private void Start()
         {
+            alarm.text = "正在播放: " + name;
             ASettingFactory.LoadSettings();
             float percent = ASettingFactory.GetSettings(ASettingFactory.MUSIC);
             vol = 0.25f * percent / 100;
@@ -38,7 +46,7 @@ namespace Assets.STRlantian.Scripts.GameEffects.Audio
         }
         private IEnumerator SlideVolumeUp(float to)
         {
-            while(au.volume < to)
+            while (au.volume < to)
             {
                 au.volume += 0.0025f;
                 Thread.Sleep(wait);
@@ -48,7 +56,7 @@ namespace Assets.STRlantian.Scripts.GameEffects.Audio
 
         private IEnumerator SlideVolumeDown(float to)
         {
-            while(au.volume > to)
+            while (au.volume > to)
             {
                 au.volume -= 0.0025f;
                 Thread.Sleep(wait);

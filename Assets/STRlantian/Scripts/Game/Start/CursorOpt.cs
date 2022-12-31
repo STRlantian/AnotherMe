@@ -1,7 +1,7 @@
 using UnityEngine;
 using STRlantian.GamePlay.KeyBinds;
 using Krivodeling.UI.Effects;
-using STRlantian.Factory;
+using STRlantian.Util.Factory;
 using System.Collections;
 using Unity.VisualScripting;
 using System.Text;

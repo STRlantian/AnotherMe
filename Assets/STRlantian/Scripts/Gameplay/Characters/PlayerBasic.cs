@@ -1,4 +1,4 @@
-﻿using STRlantian.GamePlay.Characters.NPC;
+﻿using STRlantian.GamePlay.Characters;
 using STRlantian.GamePlay.KeyBinds;
 using UnityEngine;
 

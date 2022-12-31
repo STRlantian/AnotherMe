@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace STRlantian.GamePlay.Characters.NPC
+namespace STRlantian.GamePlay.Characters
 {
     public class NPCBasic : MonoBehaviour
     {
@@ -20,7 +20,7 @@ namespace STRlantian.GamePlay.Characters.NPC
         [SerializeField]
         private PlayerBasic pl;
         [SerializeField]
-        string[] words;
+        private string[] words;
 
         void Start()
         {
@@ -30,15 +30,19 @@ namespace STRlantian.GamePlay.Characters.NPC
         // Update is called once per frame
         void Update()
         {
-
+            ChangeLayer();
         }
-        public void Talk()
-        {
 
-        }
-        public void AddMovement(float x1, float x2, float y1, float y2)
+        private void ChangeLayer()
         {
-
+            if(pl.transform.position.y > transform.position.y) // 1 for player
+            {
+                rd.sortingOrder = 2; //2 > 1
+            }
+            else
+            {
+                rd.sortingOrder = 0; //0 < 1
+            }
         }
     }
 }

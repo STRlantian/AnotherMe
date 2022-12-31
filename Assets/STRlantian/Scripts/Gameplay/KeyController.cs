@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using STRlantian.Tools.Factory;
+using STRlantian.Util.Factory;
 
 namespace STRlantian.GamePlay.KeyBinds
 {

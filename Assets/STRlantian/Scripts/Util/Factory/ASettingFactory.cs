@@ -1,7 +1,8 @@
 ﻿using System;
+using System.IO;
 using UnityEngine;
 
-namespace STRlantian.Tools.Factory
+namespace STRlantian.Util.Factory
 {
     public abstract class ASettingFactory
     {

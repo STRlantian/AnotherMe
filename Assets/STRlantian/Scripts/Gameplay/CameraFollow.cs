@@ -14,8 +14,8 @@ namespace Assets.STRlantian.Scripts.Gameplay
         void LateUpdate()
         {
             des = obj.position - transform.position;
-            transform.position = new Vector3(transform.position.x, transform.position.y, -10);
-            transform.position += des / 10;
+            transform.position = new Vector3(transform.position.x, transform.position.y, -30);
+            transform.position += des / 7;
         }
     }
 }

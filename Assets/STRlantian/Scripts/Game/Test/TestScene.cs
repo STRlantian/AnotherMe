@@ -1,5 +1,4 @@
 ﻿using STRlantian.GamePlay.Characters;
-using STRlantian.GamePlay.Characters.NPC;
 using UnityEngine;
 public class TestScene : MonoBehaviour
 {
