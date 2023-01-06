@@ -11,9 +11,7 @@ namespace STRlantian.Gameplay.MiniGame.Rhythm
         [SerializeField]
         private int length; //Seconds
         [SerializeField]
-        private const string songName;
-
-        private File chartFile;
+        private string songName;
 
         //use a Map as chart
 
@@ -22,7 +20,7 @@ namespace STRlantian.Gameplay.MiniGame.Rhythm
             LoadChart(Application.dataPath + "\\" + songName);
         }
 
-        public PlayChart()
+        public void PlayChart()
         {
 
         }

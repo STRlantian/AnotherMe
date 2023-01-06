@@ -6,7 +6,7 @@ namespace STRlantian.Effects.Roller
     public class ARoller : MonoBehaviour
     {
         [SerializeField]
-        protected Text mesh;
+        protected Text text;
         [SerializeField]
         protected int wait;
         [SerializeField]

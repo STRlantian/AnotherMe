@@ -1,11 +1,10 @@
 using UnityEngine;
-using STRlantian.GamePlay.MiniGame.Rhythm;
 
 namespace STRlantian.Gameplay.MiniGame.Rhythm
 {
     public class GameSong : MonoBehaviour
     {
-        public isPlaying = false;
+        public bool isPlaying = false;
 
         [SerializeField]
         private AudioSource au;
@@ -14,7 +13,7 @@ namespace STRlantian.Gameplay.MiniGame.Rhythm
         [SerializeField]
         private BGA bga;
 
-        public StartPlay()
+        public void StartPlay()
         {
             isPlaying = true;
             chart.PlayChart();

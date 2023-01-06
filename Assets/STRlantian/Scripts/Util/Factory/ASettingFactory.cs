@@ -8,7 +8,7 @@ namespace STRlantian.Util.Factory
     {
         private static byte[] SETTINGLIST = new byte[4];
 
-        public const int MUSIC = 0, EFFECT = 1, SHAKE = 2, BIND = 3;
+        public const int MUSIC = 0, EFFECT = 1, FPS = 2, BIND = 3;
 
         private static readonly String _DIR = Application.dataPath;
         private const String _FILENAME = "GameSettings.txt";
@@ -19,7 +19,7 @@ namespace STRlantian.Util.Factory
                 "#Do NOT edit unless you know what are these",
                 "Music_Volumn:",   //Music Vol     de 100-100
                 "Effect_Volumn:",   //Effect Vol    de 100-100
-                "Shaking:",   //Shaking   true false
+                "ShowFPS:",   //FPS   true false
                 "Bind:"            //Bind 0xz 1jkwasd
             };
 

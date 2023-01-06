@@ -42,16 +42,16 @@ namespace STRlantian.Effects.Roller
             {
                 num = 0;
                 _current = null;
-                mesh.text = null;
+                text.text = null;
                 dia.CloseDialogue();
             }
         }
         private IEnumerator Roll(string text)
         {
-            mesh.text = null;
+            base.text.text = null;
             for (int i = 0; i < text.Length; i++)
             {
-                mesh.text += text.ToCharArray()[i];
+                base.text.text += text.ToCharArray()[i];
                 Thread.Sleep(wait);
                 yield return null;
             }

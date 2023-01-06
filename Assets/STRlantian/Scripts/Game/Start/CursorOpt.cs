@@ -9,8 +9,6 @@ using System.Data;
 
 public class CursorOpt : MonoBehaviour
 {
-    [SerializeField]
-    private Rigidbody2D cursor;
     [SerializeField] 
     private GameObject option;
     [SerializeField] 
@@ -20,20 +18,18 @@ public class CursorOpt : MonoBehaviour
     [SerializeField]
     private Animator sAnim, oAnim;
     [SerializeField] 
-    private Animator[] shakers;
-    [SerializeField] 
     private SpriteRenderer bindA, bindB;
 
-    private static readonly float[] _yList = {11f, 6.5f, 1f, -4f, -10f};
-    private static byte[] _tempList = new byte[4];
+    private static readonly float[] yList = {11f, 6.5f, 1f, -4f, -10f};
+    private static byte[] tempList = new byte[4];
 
     void Start()
     {
         option.GetComponent<RectTransform>().position = new Vector2(0, 28);
         ASettingFactory.LoadSettings();
-        _tempList = (byte[])ASettingFactory.GetSettings().Clone();
+        tempList = (byte[])ASettingFactory.GetSettings().Clone();
         byte i = 0;
-        foreach (var ele in _tempList)
+        foreach (var ele in tempList)
         {
             StringBuilder b = new StringBuilder("Settings param ");
             b.Append(i);
@@ -44,23 +40,21 @@ public class CursorOpt : MonoBehaviour
         }
 
         AKey.UpdateKey(0);
-        if((byte) _tempList.GetValue(ASettingFactory.BIND) == 1)
+        if((byte) tempList.GetValue(ASettingFactory.BIND) == 1)
         {
             AKey.UpdateKey(1);
             bindA.color = new Color(255, 255, 255, 0);
             bindB.color = new Color(255, 255, 255, 255);
         }
-        if((byte) _tempList.GetValue(ASettingFactory.SHAKE) == 1)
+        if((byte) tempList.GetValue(ASettingFactory.FPS) == 1)
         {
-            AShakerFactory.EnableShakers(shakers);
-            check.GetComponent<SpriteRenderer>().color = new Color(255, 255, 255, 255);
         }
     }
     void Update()
     {
-        if(CursorStart.isOptPage)
+        if(CursorStart.inAddonMode)
         {
-            ACursorFactory.CursorMove(_yList, cursor, ACursorFactory.CHOICE_Y);
+            ACursorFactory.CursorMove(yList, transform, ACursorFactory.CHOICE_Y);
             CursorCheck();
             CursorClick();
         }
@@ -68,13 +62,13 @@ public class CursorOpt : MonoBehaviour
 
     private void CursorCheck()
     {
-        if (cursor.position.y == _yList[4])
+        if (transform.position.y == yList[4])
         {
-            cursor.position = new Vector2(-6.5f, cursor.position.y);
+            transform.position = new Vector2(-6.5f, transform.position.y);
         }
         else
         {
-            cursor.position = new Vector2(-13f, cursor.position.y);
+            transform.position = new Vector2(-13f, transform.position.y);
         }
     }
     private void CursorClick()
@@ -82,21 +76,15 @@ public class CursorOpt : MonoBehaviour
         if (Input.GetKeyDown(AKey.a)
         || Input.GetKeyDown(AKey.b))
         {
-            float curY = cursor.position.y;
-            if (curY == _yList[ASettingFactory.SHAKE])
+            float curY = transform.position.y;
+            if(curY == yList[ASettingFactory.FPS])
             {
-                /*
-                byte shake = (byte)(_tempList[ASettingFactory.SHAKE] == 0 ? 1 : 0);
-                _tempList.SetValue(shake, ASettingFactory.SHAKE);
-                AShakerFactory.EnableShakers(shakers, shake == 1);
-                check.GetComponent<SpriteRenderer>().color = new Color(255, 255, 255, shake == 1 ? 255 : 0);
-                //check.SetBool("keyDown", !check.GetBool("keyDown"));
-                */
+
             }
-            else if (curY == _yList[ASettingFactory.BIND])
+            else if (curY == yList[ASettingFactory.BIND])
             {
-                byte res = (byte)(_tempList[ASettingFactory.BIND] == 0 ? 1 : 0);
-                _tempList.SetValue(res, ASettingFactory.BIND);
+                byte res = (byte)(tempList[ASettingFactory.BIND] == 0 ? 1 : 0);
+                tempList.SetValue(res, ASettingFactory.BIND);
                 AKey.UpdateKey(res);
                 if (res == 1)
                 {
@@ -109,11 +97,11 @@ public class CursorOpt : MonoBehaviour
                     bindB.color = new Color(255, 255, 255, 0);
                 }
             }
-            else if (curY == _yList[4])
+            else if (curY == yList[4])
             {
-                _tempList.SetValue(SliderAudio.musVol, ASettingFactory.MUSIC);
-                _tempList.SetValue(SliderAudio.effVol, ASettingFactory.EFFECT);
-                ASettingFactory.UpdateSettings(_tempList);
+                tempList.SetValue(SliderAudio.musVol, ASettingFactory.MUSIC);
+                tempList.SetValue(SliderAudio.effVol, ASettingFactory.EFFECT);
+                ASettingFactory.UpdateSettings(tempList);
                 LoadStart();
             }
         }
@@ -121,17 +109,17 @@ public class CursorOpt : MonoBehaviour
 
     private void LoadStart()
     {
-        if(CursorStart.isOptPage)
+        if(CursorStart.inAddonMode)
         {
             StartCoroutine(SetBoolean());
             GameObject.Find("Blur").GetComponent<UIBlur>().EndBlur(2);
-            CursorStart.isOptPage = false;
+            CursorStart.inAddonMode = false;
         }
     }
 
     private IEnumerator SetBoolean()
     {
-        cursor.position = new Vector2(-14.3f, -20f);
+        transform.position = new Vector2(-14.3f, -20f);
         sAnim.SetBool("ShowOptionPage", false);
         oAnim.SetBool("ShowOptionPage", false);
         oAnim.SetBool("ShowStartPage", true);

@@ -58,25 +58,29 @@
   <ItemGroup>
     <Compile Include="Assets\Krivodeling\UI\Effects\Blur\Scripts\UIBlurWithCanvasGroup.cs" />
     <Compile Include="Assets\STRlantian\Scripts\Gameplay\Characters\Attributes.cs" />
+    <Compile Include="Assets\STRlantian\Scripts\Gameplay\MiniGame\Rhythm\BGA.cs" />
     <Compile Include="Assets\Krivodeling\UI\Effects\Blur\Scripts\FlipMode.cs" />
     <Compile Include="Assets\STRlantian\Scripts\Gameplay\Characters\DialogueBasic.cs" />
     <Compile Include="Assets\STRlantian\Scripts\Game\Start\CursorOpt.cs" />
     <Compile Include="Assets\STRlantian\Scripts\Game\Start\SliderAudio.cs" />
     <Compile Include="Assets\STRlantian\Scripts\Gameplay\FPSBoard.cs" />
     <Compile Include="Assets\STRlantian\Scripts\Util\Factory\ASettingFactory.cs" />
-    <Compile Include="Assets\STRlantian\Scripts\Util\Factory\AShakerFactory.cs" />
+    <Compile Include="Assets\STRlantian\Scripts\Gameplay\MiniGame\Rhythm\GameSong.cs" />
+    <Compile Include="Assets\STRlantian\Scripts\Gameplay\MiniGame\Rhythm\Chart.cs" />
     <Compile Include="Assets\STRlantian\Scripts\Gameplay\CameraFollow.cs" />
     <Compile Include="Assets\STRlantian\Scripts\Gameplay\KeyController.cs" />
     <Compile Include="Assets\STRlantian\Scripts\Game\Test\TestScene.cs" />
+    <Compile Include="Assets\ImagineVR\CameraCensorship.cs" />
     <Compile Include="Assets\STRlantian\Scripts\Gameplay\Characters\PlayerBasic.cs" />
     <Compile Include="Assets\STRlantian\Scripts\GameEffects\Roller\TextRoller.cs" />
     <Compile Include="Assets\Krivodeling\UI\Effects\Blur\Scripts\UIBlur.cs" />
     <Compile Include="Assets\STRlantian\Scripts\GameEffects\Roller\ARoller.cs" />
     <Compile Include="Assets\STRlantian\Scripts\Gameplay\Characters\NPCBasic.cs" />
+    <Compile Include="Assets\STRlantian\Scripts\GameEffects\Audio\MusicPlayer.cs" />
+    <Compile Include="Assets\STRlantian\Scripts\Gameplay\MiniGame\Rhythm\ClickNote.cs" />
     <Compile Include="Assets\STRlantian\Scripts\Util\Factory\ACursorFactory.cs" />
     <Compile Include="Assets\STRlantian\Scripts\Game\Start\CursorStart.cs" />
     <Compile Include="Assets\STRlantian\Scripts\GameEffects\Roller\DialogueRoller.cs" />
-    <Compile Include="Assets\STRlantian\Scripts\GameEffects\Audio\MusicPlayer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\STRlantian\AboutScenes.txt" />

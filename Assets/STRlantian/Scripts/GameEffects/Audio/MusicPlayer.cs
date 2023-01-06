@@ -1,7 +1,6 @@
 ﻿using STRlantian.Util.Factory;
 using System.Collections;
 using System.Threading;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,13 +15,13 @@ namespace STRlantian.GameEffects.Audio
         [SerializeField]
         private Text alarm;
         [SerializeField]
-        private string name;
-
+        private string song;
+        
         private float vol;
 
         private void Start()
         {
-            alarm.text = "正在播放: " + name;
+            alarm.text = "<b>" + song + "      </b>";
             ASettingFactory.LoadSettings();
             float percent = ASettingFactory.GetSettings(ASettingFactory.MUSIC);
             vol = 0.25f * percent / 100;

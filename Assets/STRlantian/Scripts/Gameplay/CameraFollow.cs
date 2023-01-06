@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Assets.STRlantian.Scripts.Gameplay
+namespace STRlantian.Gameplay.Camera
 {
     public class CameraFollow : MonoBehaviour
     {

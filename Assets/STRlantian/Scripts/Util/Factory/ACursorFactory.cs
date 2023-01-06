@@ -9,7 +9,7 @@ namespace STRlantian.Util.Factory
         public const int CHOICE_X = 0;
         public const int CHOICE_Y = 1;
 
-        public static void CursorMove(float[] list, Rigidbody2D body, int which)
+        public static void CursorMove(float[] list, Transform body, int which)
         {
             if (which != CHOICE_X
                 && which != CHOICE_Y)
